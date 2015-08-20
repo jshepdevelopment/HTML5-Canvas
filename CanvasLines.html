@@ -1,0 +1,72 @@
+<!-- Written by Jason Shepherd -->
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<style>
+			body {
+				margin: 0px;
+				padding: -px;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="myCanvas" width="1024" height="768"></canvas>
+		<script>
+			var canvas = document.getElementById('myCanvas');
+			var context = canvas.getContext('2d');
+			
+			//remember difference between canvas element and context
+			//canvas element is the actual DOM node embedded in HTML page.
+			//canvas context is object with properties and methods, used
+			//to render graphics inside the canvas element. context can be
+			//2d or webgl.
+			
+			//draw some lines
+			context.beginPath();
+			context.moveTo(100, 150);
+			context.lineTo(450, 50);
+			context.stroke();	
+			
+			//a thick line
+			context.beginPath();
+			context.moveTo(450, 50);
+			context.lineTo(450, 150);
+			context.lineWidth = 15;
+			context.stroke();
+			
+			//line with color
+			context.beginPath();
+			context.moveTo(458, 150);
+			context.lineTo(100, 150);
+			context.lineWidth = 10;
+			context.strokeStyle = '#ff0000';
+			context.stroke();
+			
+			//line caps
+			context.beginPath();
+			context.moveTo(canvas.width / 2, canvas.height / 2);
+			context.lineTo(canvas.width - 100, canvas.height / 2);
+			context.lineWidth = 20;
+			context.strokeStyle = '#ff0000';
+			context.line
+			context.stroke();
+			
+			context.beginPath();
+			context.moveTo(canvas.width / 2, canvas.height / 2 + 50);
+			context.lineTo(canvas.width - 100, canvas.height / 2 + 50);
+			context.lineWidth = 20;
+			context.strokeStyle = '#00ff00';
+			context.lineCap = 'round';
+			context.stroke();
+			
+			context.beginPath();
+			context.moveTo(canvas.width / 2, canvas.height / 2 + 100);
+			context.lineTo(canvas.width - 100, canvas.height / 2 + 100);
+			context.lineWidth = 20;
+			context.strokeStyle = '#0000ff';
+			context.lineCap = 'square';
+			context.stroke();
+
+		</script>
+	</body>
+</html>
