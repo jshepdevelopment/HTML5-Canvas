@@ -21,7 +21,7 @@
 			//to render graphics inside the canvas element. context can be
 			//2d or webgl.
 			
-			//an introduction 
+			//do something cool with context
 			context.font = '40pt Calibri';
 			context.fillStyle = 'red';
 			context.fillText('Canvas Arc Demo', 15, 50);
@@ -30,9 +30,9 @@
 			var context = canvas.getContext('2d');
 			var x = canvas.width / 2;
 			var y = canvas.height / 2;
-			var radius = 75;
-			var startAngle = 1.1 * Math.PI;
-			var endAngle = 1.9 * Math.PI;
+			var radius = 90;
+			var startAngle = 1.0 * Math.PI;
+			var endAngle = 2.0 * Math.PI;
 			var counterClockwise = false;
 
 			context.beginPath();
@@ -41,6 +41,7 @@
 
 			// line color
 			context.strokeStyle = 'black';
+			context.lineCap = 'round';
 			context.stroke();
 			
 		</script>
