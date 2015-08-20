@@ -10,7 +10,7 @@
 		</style>
 	</head>
 	<body>
-		<canvas id="myCanvas" width="1024" height="200"></canvas>
+		<canvas id="myCanvas" width="1024" height="300"></canvas>
 		<script>
 			var canvas = document.getElementById('myCanvas');
 			var context = canvas.getContext('2d');
@@ -22,15 +22,15 @@
 			//2d or webgl.
 			
 			//do something cool with context
-			context.font = '40pt Calibri';
+			context.font = '30pt Calibri';
 			context.fillStyle = 'red';
-			context.fillText('Canvas Arc Demo', 15, 50);
+			context.fillText('Canvas Arc', 15, 50);
 			
 			var canvas = document.getElementById('myCanvas');
 			var context = canvas.getContext('2d');
 			var x = canvas.width / 2;
-			var y = canvas.height / 2;
-			var radius = 90;
+			var y = 50;
+			var radius = 30;
 			var startAngle = 1.0 * Math.PI;
 			var endAngle = 2.0 * Math.PI;
 			var counterClockwise = false;
@@ -44,10 +44,38 @@
 			context.lineCap = 'round';
 			context.stroke();
 			
+			//quadratic curve
+			context.font = '30pt Calibri';
+			context.fillStyle = 'red';
+			context.fillText('Quadratic Curve', 15, 100);
+			
+			context.beginPath();
+			context.moveTo(350, 100);
+			context.quadraticCurveTo(350, 0, 400, 100);
+			context.lineWidth = 10;
+
+			// line color
+			context.strokeStyle = 'black';
+			context.stroke();
+			
+			//quadratic curve
+			context.font = '30pt Calibri';
+			context.fillStyle = 'red';
+			context.fillText('Beziere Curve', 15, 150);
+
+			//beziere curve
+			context.beginPath();
+			context.moveTo(450, 150);
+			context.bezierCurveTo(450, 100, 480, 100, 500, 150);
+			context.lineWidth = 10;
+
+			// line color
+			context.strokeStyle = 'black';
+			context.stroke();
+			
 		</script>
 		
-		<p>Arc created using variables <code>radius, startAngle, endAngle, counterClockwise</code><br/>
-		Using methods <code>beginPath(), arc()</code>.</p>
+		<p>	Using methods <code>beginPath(), arc(), quadraticCurveTo(), bezierCurveTo() </code>.</p>
 		
 	</body>
 </html>	
