@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<style>
+			body {
+				margin: 0px;
+				padding: -px;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="myCanvas" width="1024" height="200"></canvas>
+		<script>
+			var canvas = document.getElementById('myCanvas');
+			var context = canvas.getContext('2d');
+			
+			//remember difference between canvas element and context
+			//canvas element is the actual DOM node embedded in HTML page.
+			//canvas context is object with properties and methods, used
+			//to render graphics inside the canvas element. context can be
+			//2d or webgl.
+			
+			//do something cool with context
+			context.font = '40pt Calibri';
+			context.fillStyle = 'red';
+			context.fillText('Hello World! Hello HTML5 Canvas!', 50, 50);
+		</script>
+		
+		<p>Canvas element created. This is the DOM node embedded in HTML. <br/>
+		Canvas context created. This is an object with properties and methods.<br/>
+		For this demonstration, a 2d context is employed.</p>
+		
+	</body>
+</html>	
